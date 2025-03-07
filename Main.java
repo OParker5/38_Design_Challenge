@@ -150,13 +150,16 @@ public class Main {
         // Inheritance demonstration
         Warrior warrior = new Warrior("Thogar", 100, 16);
         Mage mage = new Mage("Elric", 80, 18);
+        Rogue rogue = new Rogue("Marco", 80, 18);
 
         // Interface implementation
         Enemy goblin = new Enemy("Goblin", 50);
+        Enemy Hobgoblin = new Enemy("Goblin", 100);
         
         // Attacking enemy
         goblin.takeDamage(warrior.attack());
         goblin.takeDamage(mage.castSpell());
+        goblin.takeDamage(rogue.attack());
 
         // Polymorphism examples
         DamageCalculator calculator = new DamageCalculator();
@@ -165,11 +168,11 @@ public class Main {
 
         // Demonstrating method overriding with Barbarian (Warrior subclass)
         Barbarian barbarian = new Barbarian("Grog", 120, 18);
-        goblin.takeDamage(barbarian.attack());
+        Hobgoblin.takeDamage(barbarian.attack());
 
         // Demonstrating method overriding with Sorcerer (Mage subclass)
         Sorcerer sorcerer = new Sorcerer("Vexis", 90, 20, 20);
-        goblin.takeDamage(sorcerer.castSpell());
+        Hobgoblin.takeDamage(sorcerer.castSpell());
 
         // Data Coupling
         DataCouplingExample dataCoupling = new DataCouplingExample();
