@@ -44,6 +44,23 @@ class Mage extends Character {
     }
 }
 
+
+class Rogue extends Character {
+    private int dexterity; // Dexterity attribute
+
+    public Rogue(String name, int health, int dexterity) {
+        super(name, health);
+        this.dexterity = dexterity;
+    }
+
+    @Override
+    int attack() {
+        int damage = dexterity + (int) (Math.random() * 8 + 1); // dexterity + d6 roll
+        System.out.println(name + " strikes out with daggers " + damage + " damage!");
+        return damage;
+    }
+}
+
 // Separate interface
 interface Attackable {
     void takeDamage(int damage);
