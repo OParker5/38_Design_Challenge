@@ -117,8 +117,8 @@ class Barbarian extends Warrior {
 
 // Demonstrating method overriding (polymorphism)
 class Sorcerer extends Mage {
-    public Sorcerer(String name, int health, int mana, int intelligence) {
-        super(name, health, mana, intelligence);
+    public Sorcerer(String name, int health,  int intelligence) {
+        super(name, health, intelligence);
     }
 
     @Override
