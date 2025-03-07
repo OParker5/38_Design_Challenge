@@ -1,14 +1,53 @@
 // Base class demonstrating inheritance
 abstract class Character {
-    protected String name;
+    protected String name; // default access modifier
     protected int health;
 
+    // Constructor for name and health
     public Character(String name, int health) {
-        this.name = name;
+        this.name = name; 
         this.health = health;
     }
 
     abstract int attack(); // Attack now returns damage
+    
+    // Adding main method to Character class
+    public static void main(String[] args) {
+        // Inheritance demonstration
+        Warrior warrior = new Warrior("Thogar", 100, 16);
+        Mage mage = new Mage("Elric", 80, 18);
+        Rogue rogue = new Rogue("Marco", 80, 18);
+
+        // Interface implementation
+        Enemy goblin = new Enemy("Goblin", 50);
+        Enemy hobgoblin = new Enemy("Hobgoblin", 100);
+        
+        // Attacking enemy
+        goblin.takeDamage(warrior.attack());
+        goblin.takeDamage(mage.castSpell());
+        goblin.takeDamage(rogue.attack());
+
+        // Polymorphism examples
+        DamageCalculator calculator = new DamageCalculator();
+        System.out.println("Damage (normal): " + calculator.calculateDamage(10, 5));
+        System.out.println("Damage (bonus): " + calculator.calculateDamage(10, 5, 3));
+
+        // Demonstrating method overriding with Barbarian (Warrior subclass)
+        Barbarian barbarian = new Barbarian("Grog", 120, 18);
+        hobgoblin.takeDamage(barbarian.attack());
+
+        // Demonstrating method overriding with Sorcerer (Mage subclass)
+        Sorcerer sorcerer = new Sorcerer("Vexis", 90, 20);
+        hobgoblin.takeDamage(sorcerer.castSpell());
+
+        // Data Coupling
+        DataCouplingExample dataCoupling = new DataCouplingExample();
+        dataCoupling.healCharacter(20);
+
+        // Stamp Coupling
+        StampCouplingExample stampCoupling = new StampCouplingExample();
+        stampCoupling.displayCharacter(mage);
+    }
 }
 
 // Subclasses inheriting from Character
@@ -42,8 +81,14 @@ class Mage extends Character {
         System.out.println(name + " casts a fireball for " + damage + " damage!");
         return damage;
     }
+    
+    // Added castSpell method that was missing
+    int castSpell() {
+        int damage = intelligence + (int) (Math.random() * 10 + 1); // Intelligence + d10 roll
+        System.out.println(name + " casts an arcane spell for " + damage + " damage!");
+        return damage;
+    }
 }
-
 
 class Rogue extends Character {
     private int dexterity; // Dexterity attribute
@@ -55,8 +100,8 @@ class Rogue extends Character {
 
     @Override
     int attack() {
-        int damage = dexterity + (int) (Math.random() * 8 + 1); // dexterity + d6 roll
-        System.out.println(name + " strikes out with daggers " + damage + " damage!");
+        int damage = dexterity + (int) (Math.random() * 8 + 1); // dexterity + d8 roll
+        System.out.println(name + " strikes out with daggers for " + damage + " damage!"); // Fixed missing "for"
         return damage;
     }
 }
@@ -110,18 +155,17 @@ class Barbarian extends Warrior {
 
 // Demonstrating method overriding (polymorphism)
 class Sorcerer extends Mage {
-    public Sorcerer(String name, int health, int mana, int intelligence) {
-        super(name, health, mana, intelligence);
+    public Sorcerer(String name, int health, int intelligence) {
+        super(name, health, intelligence); // Fixed constructor parameters
     }
 
     @Override
-    int castSpell() {
+    int castSpell() { // Now properly overrides the castSpell method in Mage
         int damage = super.castSpell() + (int) (Math.random() * 6 + 1); // Extra d6 roll
         System.out.println(name + " channels chaotic energy and enhances the spell!");
         return damage;
     }
 }
-
 
 // Example of data coupling
 class DataCouplingExample {
@@ -137,19 +181,22 @@ class StampCouplingExample {
     }
 }
 
-// Main class to test the implementation
-public class Main {
+// Main class to test the implementation, keeping this for completeness
+class Main {
     public static void main(String[] args) {
         // Inheritance demonstration
         Warrior warrior = new Warrior("Thogar", 100, 16);
         Mage mage = new Mage("Elric", 80, 18);
+        Rogue rogue = new Rogue("Marco", 80, 18);
 
         // Interface implementation
         Enemy goblin = new Enemy("Goblin", 50);
+        Enemy hobgoblin = new Enemy("Hobgoblin", 100); // Fixed typo in variable name and enemy type
         
         // Attacking enemy
         goblin.takeDamage(warrior.attack());
         goblin.takeDamage(mage.castSpell());
+        goblin.takeDamage(rogue.attack());
 
         // Polymorphism examples
         DamageCalculator calculator = new DamageCalculator();
@@ -158,11 +205,11 @@ public class Main {
 
         // Demonstrating method overriding with Barbarian (Warrior subclass)
         Barbarian barbarian = new Barbarian("Grog", 120, 18);
-        goblin.takeDamage(barbarian.attack());
+        hobgoblin.takeDamage(barbarian.attack());
 
         // Demonstrating method overriding with Sorcerer (Mage subclass)
-        Sorcerer sorcerer = new Sorcerer("Vexis", 90, 20, 20);
-        goblin.takeDamage(sorcerer.castSpell());
+        Sorcerer sorcerer = new Sorcerer("Vexis", 90, 20); // Fixed constructor arguments
+        hobgoblin.takeDamage(sorcerer.castSpell());
 
         // Data Coupling
         DataCouplingExample dataCoupling = new DataCouplingExample();
