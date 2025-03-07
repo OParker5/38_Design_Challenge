@@ -149,15 +149,20 @@ public class Main {
         
         // Attacking enemy
         goblin.takeDamage(warrior.attack());
-        goblin.takeDamage(mage.attack());
+        goblin.takeDamage(mage.castSpell());
 
         // Polymorphism examples
         DamageCalculator calculator = new DamageCalculator();
         System.out.println("Damage (normal): " + calculator.calculateDamage(10, 5));
         System.out.println("Damage (bonus): " + calculator.calculateDamage(10, 5, 3));
 
+        // Demonstrating method overriding with Barbarian (Warrior subclass)
         Barbarian barbarian = new Barbarian("Grog", 120, 18);
         goblin.takeDamage(barbarian.attack());
+
+        // Demonstrating method overriding with Sorcerer (Mage subclass)
+        Sorcerer sorcerer = new Sorcerer("Vexis", 90, 20, 20);
+        goblin.takeDamage(sorcerer.castSpell());
 
         // Data Coupling
         DataCouplingExample dataCoupling = new DataCouplingExample();
@@ -168,3 +173,4 @@ public class Main {
         stampCoupling.displayCharacter(mage);
     }
 }
+
