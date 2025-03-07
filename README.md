@@ -6,8 +6,8 @@ Gaming: A Charater base class with Warrior and Mage subclass, an Attackable inte
     Abstract class for the character
 Modifier and assigned to refer to the current instance.
 
-    Subclasses inheringting from Charater
-Calling the constructor of the superclass, which is two variables name and health.
+    Subclasses inheringting from Character
+Calling the constructor of the superclass, which is variables name and health.
 
 
 
