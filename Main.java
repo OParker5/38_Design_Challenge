@@ -125,6 +125,10 @@ class Enemy implements Attackable {
     public void takeDamage(int damage) {
         health -= damage;
         System.out.println(type + " takes " + damage + " damage! Remaining health: " + Math.max(health, 0));
+        if(Math.max(health, 0) <= 0){
+            System.out.println(type + " dies!");
+        }
+        
     }
 }
 
