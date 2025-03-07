@@ -1,10 +1,11 @@
 // Base class demonstrating inheritance
 abstract class Character {
-    protected String name;
+    protected String name; // default access modifier
     protected int health;
 
+    // Constructor for name and health
     public Character(String name, int health) {
-        this.name = name;
+        this.name = name; 
         this.health = health;
     }
 
@@ -15,9 +16,15 @@ abstract class Character {
 class Warrior extends Character {
     private int str; // Strength attribute
 
+<<<<<<< HEAD
     public Warrior(String name, int health, int str) {
         super(name, health);
         this.str = str;
+=======
+    public Warrior(String name, int health, int strength) {
+        super(name, health); 
+        this.strength = strength;
+>>>>>>> 44a1902 (README FILE UPDATED)
     }
 
     @Override
