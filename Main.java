@@ -8,35 +8,39 @@ abstract class Character {
         this.health = health;
     }
 
-    abstract void attack();
+    abstract int attack(); // Attack now returns damage
 }
 
 // Subclasses inheriting from Character
 class Warrior extends Character {
-    private int strength;
+    private int str; // Strength attribute
 
-    public Warrior(String name, int health, int strength) {
+    public Warrior(String name, int health, int str) {
         super(name, health);
-        this.strength = strength;
+        this.str = str;
     }
 
     @Override
-    void attack() {
-        System.out.println(name + " swings a sword with " + strength + " strength!");
+    int attack() {
+        int damage = str + (int) (Math.random() * 6 + 1); // Strength + d6 roll
+        System.out.println(name + " swings a sword for " + damage + " damage!");
+        return damage;
     }
 }
 
 class Mage extends Character {
-    private int mana;
+    private int intelligence; // Intelligence attribute
 
-    public Mage(String name, int health, int mana) {
+    public Mage(String name, int health, int intelligence) {
         super(name, health);
-        this.mana = mana;
+        this.intelligence = intelligence;
     }
 
     @Override
-    void attack() {
-        System.out.println(name + " casts a fireball using " + mana + " mana!");
+    int attack() {
+        int damage = intelligence + (int) (Math.random() * 8 + 1); // Intelligence + d8 roll
+        System.out.println(name + " casts a fireball for " + damage + " damage!");
+        return damage;
     }
 }
 
@@ -45,7 +49,7 @@ interface Attackable {
     void takeDamage(int damage);
 }
 
-// Implementing the interface in the Character class
+// Implementing the interface in the Enemy class
 class Enemy implements Attackable {
     private String type;
     private int health;
@@ -58,37 +62,39 @@ class Enemy implements Attackable {
     @Override
     public void takeDamage(int damage) {
         health -= damage;
-        System.out.println(type + " takes " + damage + " damage! Remaining health: " + health);
+        System.out.println(type + " takes " + damage + " damage! Remaining health: " + Math.max(health, 0));
     }
 }
 
 // Demonstrating method overloading (polymorphism)
 class DamageCalculator {
-    public int calculateDamage(int baseDamage, int strength) {
-        return baseDamage + strength;
+    public int calculateDamage(int baseDamage, int modifier) {
+        return baseDamage + modifier;
     }
 
-    public int calculateDamage(int baseDamage, int strength, int bonus) {
-        return baseDamage + strength + bonus;
+    public int calculateDamage(int baseDamage, int modifier, int bonus) {
+        return baseDamage + modifier + bonus;
     }
 }
 
 // Demonstrating method overriding (polymorphism)
-class Berserker extends Warrior {
-    public Berserker(String name, int health, int strength) {
-        super(name, health, strength);
+class Barbarian extends Warrior {
+    public Barbarian(String name, int health, int str) {
+        super(name, health, str);
     }
 
     @Override
-    void attack() {
-        System.out.println(name + " enters a rage and attacks with double strength!");
+    int attack() {
+        int damage = (super.attack() + (int) (Math.random() * 4 + 1)); // Extra d4 roll
+        System.out.println(name + " rages and deals extra damage!");
+        return damage;
     }
 }
 
 // Example of data coupling
 class DataCouplingExample {
     public void healCharacter(int healAmount) {  // Primitive data passed
-        System.out.println("Character healed by " + healAmount + " points.");
+        System.out.println("Character healed by " + healAmount + " HP.");
     }
 }
 
@@ -103,29 +109,30 @@ class StampCouplingExample {
 public class Main {
     public static void main(String[] args) {
         // Inheritance demonstration
-        Warrior warrior = new Warrior("Aragorn", 100, 20);
-        Mage mage = new Mage("Gandalf", 80, 50);
-        warrior.attack();
-        mage.attack();
+        Warrior warrior = new Warrior("Thogar", 100, 16);
+        Mage mage = new Mage("Elric", 80, 18);
 
         // Interface implementation
         Enemy goblin = new Enemy("Goblin", 50);
-        goblin.takeDamage(15);
+        
+        // Attacking enemy
+        goblin.takeDamage(warrior.attack());
+        goblin.takeDamage(mage.attack());
 
         // Polymorphism examples
         DamageCalculator calculator = new DamageCalculator();
         System.out.println("Damage (normal): " + calculator.calculateDamage(10, 5));
         System.out.println("Damage (bonus): " + calculator.calculateDamage(10, 5, 3));
 
-        Berserker berserker = new Berserker("Guts", 120, 30);
-        berserker.attack();
+        Barbarian barbarian = new Barbarian("Grog", 120, 18);
+        goblin.takeDamage(barbarian.attack());
 
         // Data Coupling
         DataCouplingExample dataCoupling = new DataCouplingExample();
-        dataCoupling.healCharacter(25);
+        dataCoupling.healCharacter(20);
 
         // Stamp Coupling
         StampCouplingExample stampCoupling = new StampCouplingExample();
-        stampCoupling.displayCharacter(warrior);
+        stampCoupling.displayCharacter(mage);
     }
 }
