@@ -108,6 +108,21 @@ class Barbarian extends Warrior {
     }
 }
 
+// Demonstrating method overriding (polymorphism)
+class Sorcerer extends Mage {
+    public Sorcerer(String name, int health, int mana, int intelligence) {
+        super(name, health, mana, intelligence);
+    }
+
+    @Override
+    int castSpell() {
+        int damage = super.castSpell() + (int) (Math.random() * 6 + 1); // Extra d6 roll
+        System.out.println(name + " channels chaotic energy and enhances the spell!");
+        return damage;
+    }
+}
+
+
 // Example of data coupling
 class DataCouplingExample {
     public void healCharacter(int healAmount) {  // Primitive data passed
