@@ -1,11 +1,10 @@
 // Base class demonstrating inheritance
 abstract class Character {
-    protected String name; // default access modifier
+    protected String name;
     protected int health;
 
-    // Constructor for name and health
     public Character(String name, int health) {
-        this.name = name; 
+        this.name = name;
         this.health = health;
     }
 
@@ -16,15 +15,9 @@ abstract class Character {
 class Warrior extends Character {
     private int str; // Strength attribute
 
-<<<<<<< HEAD
     public Warrior(String name, int health, int str) {
         super(name, health);
         this.str = str;
-=======
-    public Warrior(String name, int health, int strength) {
-        super(name, health); 
-        this.strength = strength;
->>>>>>> 44a1902 (README FILE UPDATED)
     }
 
     @Override
@@ -117,8 +110,8 @@ class Barbarian extends Warrior {
 
 // Demonstrating method overriding (polymorphism)
 class Sorcerer extends Mage {
-    public Sorcerer(String name, int health,  int intelligence) {
-        super(name, health, intelligence);
+    public Sorcerer(String name, int health, int mana, int intelligence) {
+        super(name, health, mana, intelligence);
     }
 
     @Override
@@ -150,16 +143,13 @@ public class Main {
         // Inheritance demonstration
         Warrior warrior = new Warrior("Thogar", 100, 16);
         Mage mage = new Mage("Elric", 80, 18);
-        Rogue rogue = new Rogue("Marco", 80, 18);
 
         // Interface implementation
         Enemy goblin = new Enemy("Goblin", 50);
-        Enemy Hobgoblin = new Enemy("Goblin", 100);
         
         // Attacking enemy
         goblin.takeDamage(warrior.attack());
         goblin.takeDamage(mage.castSpell());
-        goblin.takeDamage(rogue.attack());
 
         // Polymorphism examples
         DamageCalculator calculator = new DamageCalculator();
@@ -168,11 +158,11 @@ public class Main {
 
         // Demonstrating method overriding with Barbarian (Warrior subclass)
         Barbarian barbarian = new Barbarian("Grog", 120, 18);
-        Hobgoblin.takeDamage(barbarian.attack());
+        goblin.takeDamage(barbarian.attack());
 
         // Demonstrating method overriding with Sorcerer (Mage subclass)
         Sorcerer sorcerer = new Sorcerer("Vexis", 90, 20, 20);
-        Hobgoblin.takeDamage(sorcerer.castSpell());
+        goblin.takeDamage(sorcerer.castSpell());
 
         // Data Coupling
         DataCouplingExample dataCoupling = new DataCouplingExample();
@@ -183,4 +173,3 @@ public class Main {
         stampCoupling.displayCharacter(mage);
     }
 }
-
