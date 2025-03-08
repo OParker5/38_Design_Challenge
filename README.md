@@ -59,9 +59,4 @@ class DataCouplingExample {
     }
 }
 
-### Test
-<img width="661" alt="Screenshot 2025-03-07 at 6 50 36 PM" src="https://github.com/user-attachments/assets/4b8cb994-5d66-4ecd-a29d-f467018b726c" />
-
-
-
-
+## Test
