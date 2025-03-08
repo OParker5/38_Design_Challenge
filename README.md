@@ -17,33 +17,30 @@ Assignment1 for CPRE 4160
   - [Stamp Coupling](#stamp-coupling)
 - [Main Class](#main-class)
 
-## Overview **Gaming: A Character base class with Warrior and Mage subclass, an Attackable interface.**
+## Overview
+Gaming: A Character base class with Warrior and Mage subclass, an Attackable interface.
 
-This project demonstrates the concepts of inheritance, polymorphism, method overloading, method overriding, interfaces, and coupling. In the program the characters attack the enemics and calculate the damage to display the results in dynamically. 
-
-
-## Classes Structure
+## Classes
 
 ### Character
-1. Fields: String name and int health are protected.
-2. There are two constructors
-3. Abstract Method: int attack():
-   An abstract method that must be implemented by subclasses. It represents an attack action and returns the damage dealt.
+1. Fields: `String name` and `int health` are protected.
+2. Constructor: Initializes `name` and `health`.
+3. Abstract Method: `int attack()`: An abstract method that must be implemented by subclasses. It represents an attack action and returns the damage dealt.
 
 ### Warrior
-This is a subclass of the Character, extends Character with defines a class named Warrior that inherits from Character class.
+This is a subclass of `Character`. It extends `Character` and defines a class named `Warrior` that inherits from the `Character` class.
 
 ### Mage
-
+This is a subclass of `Character`. It extends `Character` and defines a class named `Mage` that inherits from the `Character` class.
 
 ### Rogue
-Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
+This is a subclass of `Character`. It extends `Character` and defines a class named `Rogue` that inherits from the `Character` class.
 
 ### Barbarian
-Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
+This is a subclass of `Character`. It extends `Character` and defines a class named `Barbarian` that inherits from the `Character` class.
 
 ### Sorcerer
-Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
+This is a subclass of `Character`. It extends `Character` and defines a class named `Sorcerer` that inherits from the `Character` class.
 
 ## Interfaces
 
@@ -53,10 +50,10 @@ An interface that defines the `takeDamage` method.
 ## Examples
 
 ### Data Coupling
-The method takes an integer as an argument, then prints a message indicating the amount of healing the console.
+Example of data coupling.
 
 ### Stamp Coupling
-This method takes a charactor object as an argument and print name and health.
+Example of stamp coupling.
 
 ## Main Class
 Main class to test the implementation.
