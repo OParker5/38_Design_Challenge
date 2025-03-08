@@ -18,6 +18,10 @@ Assignment1 for CPRE 4160
 - [Main Class](#main-class)
 
 
+#overview
+Project Overview
+
+
 Gaming: A Charater base class with Warrior and Mage subclass, an Attackable interface.
 
 This project demonstrates the key of OOP concepts including inheritance, polymorphism, method overloading, method overriding, interfaces, and coupling. The system allows characters to attack the enemics and calculate the damage to display the results in dynamically. 
