@@ -58,3 +58,10 @@ class DataCouplingExample {
         System.out.println("Character healed by " + healAmount + " HP.");
     }
 }
+
+## Test
+<img width="661" alt="Screenshot 2025-03-07 at 6 50 36 PM" src="https://github.com/user-attachments/assets/e2f9d8c8-5989-43d1-8f04-c2af17380117" />
+
+
+
+
