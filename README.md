@@ -20,6 +20,9 @@ Assignment 1 for CPRE 4160
 ## Overview
 Gaming: A Character base class with Warrior and Mage subclass, an Attackable interface.
 
+This project is a Java based simulation of a simple role playing game system which demonstrates core object-oriented programming (OOP) concepts. It models characters, enemies, and their interactions, such as attacking, taking damage, and calculating damage. The project is designed to show the principles like inheritance, polymorphism, encapsulation, and abstraction, as well as concepts like interfaces, method overloading, method overriding, and coupling.
+
+
 ## Classes
 
 ### Character
