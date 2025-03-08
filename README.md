@@ -17,21 +17,41 @@ Assignment1 for CPRE 4160
   - [Stamp Coupling](#stamp-coupling)
 - [Main Class](#main-class)
 
+## Overview
+Gaming: A Character base class with Warrior and Mage subclass, an Attackable interface.
 
-#overview
-Project Overview
+## Classes
 
+### Character
+Abstract class for the character. Modifier and assigned to refer to the current instance.
 
-Gaming: A Charater base class with Warrior and Mage subclass, an Attackable interface.
+### Warrior
+Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
 
-This project demonstrates the key of OOP concepts including inheritance, polymorphism, method overloading, method overriding, interfaces, and coupling. The system allows characters to attack the enemics and calculate the damage to display the results in dynamically. 
+### Mage
+Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
 
-    Abstract class for the character
-Modifier and assigned to refer to the current instance.
+### Rogue
+Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
 
-    Subclasses inheringting from Character
-Calling the constructor of the superclass, which is variables name and health.
+### Barbarian
+Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
 
+### Sorcerer
+Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
 
+## Interfaces
 
+### Attackable
+An interface that defines the `takeDamage` method.
 
+## Examples
+
+### Data Coupling
+Example of data coupling.
+
+### Stamp Coupling
+Example of stamp coupling.
+
+## Main Class
+Main class to test the implementation.
