@@ -50,15 +50,11 @@ An interface that defines the `takeDamage` method.
 ## Examples
 
 ### Data Coupling
-Example of data coupling.
+Data coupling occurs when only the necessary data is passed to a method. In this example, the `healCharacter` method takes an integer `healAmount` as an argument, representing the amount of healing to be applied.
 
-### Stamp Coupling
-Example of stamp coupling.
-
-## Main Class
-Main class to test the implementation.
-
-
-## Test
-<img width="661" alt="Screenshot 2025-03-07 at 6 50 36 PM" src="https://github.com/user-attachments/assets/de2f2216-9726-4338-a0e6-6e4b480adb53" />
-
+```java
+class DataCouplingExample {
+    public void healCharacter(int healAmount) {  // Primitive data passed
+        System.out.println("Character healed by " + healAmount + " HP.");
+    }
+}
