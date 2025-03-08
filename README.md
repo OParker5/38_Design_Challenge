@@ -1,5 +1,5 @@
 # 38_Design_Challenge
-Assignment1 for CPRE 4160
+Assignment 1 for CPRE 4160
 
 ## Table of Contents
 - [Overview](#overview)
