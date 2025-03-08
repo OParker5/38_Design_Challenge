@@ -53,10 +53,10 @@ An interface that defines the `takeDamage` method.
 ## Examples
 
 ### Data Coupling
-Example of data coupling.
+The method takes an integer as an argument, then prints a message indicating the amount of healing the console.
 
 ### Stamp Coupling
-Example of stamp coupling.
+This method takes a charactor object as an argument and print name and health.
 
 ## Main Class
 Main class to test the implementation.
