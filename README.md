@@ -17,8 +17,11 @@ Assignment1 for CPRE 4160
   - [Stamp Coupling](#stamp-coupling)
 - [Main Class](#main-class)
 
-## Overview
-Gaming: A Character base class with Warrior and Mage subclass, an Attackable interface.
+## Overview **Gaming: A Character base class with Warrior and Mage subclass, an Attackable interface.**
+
+
+This project demonstrates the key of OOP concepts including inheritance, polymorphism, method overloading, method overriding, interfaces, and coupling. The system allows characters to attack the enemics and calculate the damage to display the results in dynamically. 
+
 
 ## Classes
 
