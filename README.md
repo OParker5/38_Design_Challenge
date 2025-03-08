@@ -29,11 +29,6 @@ This project demonstrates the concepts of inheritance, polymorphism, method over
 2. There are two constructors
 3. Abstract Method: int attack():
    An abstract method that must be implemented by subclasses. It represents an attack action and returns the damage dealt.
-6. Main Method:
-   public static void main(String[] args): Demonstrates the use of inheritance and polymorphism.
-   Creates instances of subclasses Warrior, Mage, and Rogue.
-   Creates instances of Enemy.
-   Demonstrates attacking an enemy using the attack method from different subclasses.
 
 ### Warrior
 Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
