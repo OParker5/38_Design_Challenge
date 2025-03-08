@@ -60,3 +60,8 @@ Example of stamp coupling.
 
 ## Main Class
 Main class to test the implementation.
+
+
+## Test
+<img width="661" alt="Screenshot 2025-03-07 at 6 50 36 PM" src="https://github.com/user-attachments/assets/de2f2216-9726-4338-a0e6-6e4b480adb53" />
+
