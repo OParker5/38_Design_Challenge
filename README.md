@@ -58,9 +58,12 @@ class DataCouplingExample {
         System.out.println("Character healed by " + healAmount + " HP.");
     }
 }
+Main Class
+Main class to test the implementation.
 
-## Test
-<img width="661" alt="Screenshot 2025-03-07 at 6 50 36 PM" src="https://github.com/user-attachments/assets/e2f9d8c8-5989-43d1-8f04-c2af17380117" />
+Test
+<img width="661" alt="Screenshot 2025-03-07 at 6 50 36 PM" src="https://github<vscode_annotation details='%5B%7B%22title%22%3A%22hardcoded-credentials%22%2C%22description%22%3A%22Embedding%20credentials%20in%20source%20code%20risks%20unauthorized%20access%22%7D%5D'>.com</vscode_annotation>/user-attachments/assets/de2f2216-9726-4338-a0e6-6e4b480adb53" /> ```
+
 
 
 
