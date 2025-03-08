@@ -25,16 +25,16 @@ This project demonstrates the concepts of inheritance, polymorphism, method over
 ## Classes Structure
 
 ### Character
-1. Fields: String name and int health is protected.
+1. Fields: String name and int health are protected.
 2. There are two constructors
 3. Abstract Method: int attack():
    An abstract method that must be implemented by subclasses. It represents an attack action and returns the damage dealt.
 
 ### Warrior
-Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
+This is a subclass of the Character, extends Character with defines a class named Warrior that inherits from Character class.
 
 ### Mage
-Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
+
 
 ### Rogue
 Subclasses inheriting from Character. Calling the constructor of the superclass, which is two variables name and health.
