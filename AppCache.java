@@ -2,6 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AppCache {
+    // Constructor and instance are private enforcing Singleton
+
     // Store the mapping from EnhancementId to ConfigurationData.
     private Map<EnhancementId, ConfigurationData> cache;
     
@@ -15,6 +17,7 @@ public class AppCache {
     }
     
     // Method to provide access to the single instance.
+    // getInstance() check if instance is null nad creates if needed ensuring one instance exists
     // Synchronized to ensure thread safety in a multi-threaded environment.
     public static synchronized AppCache getInstance() {
         if (instance == null) {
