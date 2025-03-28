@@ -43,10 +43,21 @@ class NotificationFactory {
     }
 }
 
-// Step 4: Demonstration
+// Step 4: Demonstration and Testing
 public class FactoryPatternDemo {
     public static void main(String[] args) {
+        // Running demonstration
         Notification notification = NotificationFactory.createNotification(NotificationChannelType.EMAIL);
         notification.send("Hello!");
+
+        // Running tests
+        testNotification(NotificationChannelType.EMAIL, "Test Email Message");
+        testNotification(NotificationChannelType.SMS, "Test SMS Message");
+        testNotification(NotificationChannelType.PUSH, "Test Push Notification Message");
+    }
+
+    private static void testNotification(NotificationChannelType channelType, String message) {
+        Notification notification = NotificationFactory.createNotification(channelType);
+        notification.send(message);
     }
 }
