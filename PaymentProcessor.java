@@ -1,7 +1,6 @@
 public class PaymentProcessor {
     // Internal "service" methods (could be extracted to separate classes later)
     private double findDiscountPercent(int discountCode) {
-        // Logic to lookup discount (e.g., database call)
         return discountCode > 100 ? 0.2 : 0.1; // Example
     }
 
@@ -11,7 +10,6 @@ public class PaymentProcessor {
     }
 
     private double calculateShipping(Order order) {
-        // Logic to compute shipping (e.g., API call)
         return order.getWeight() * 0.5; 
     }
 
